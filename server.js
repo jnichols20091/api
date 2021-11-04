@@ -15,9 +15,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+app.use('/api/v1/product', require('./routes/productRoutes'));
+
 
 app.get('/', (req, res, next) => {
-    res.send('hello from node server')
+    res.send('hello from node server');
 });
 
 const PORT = process.env.PORT || 3000;
